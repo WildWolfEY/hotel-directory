@@ -1,0 +1,215 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 805306368 bytes for Failed to commit area from 0x00000000c0000000 to 0x00000000f0000000 of length 805306368.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./src/hotspot/os/windows/os_windows.cpp:3386), pid=4496, tid=2372
+#
+# JRE version:  (11.0.18+10) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.18+10-LTS, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Denv=development -Dfull.stacktrace=false -Dgrails.env=development -Dgrails.full.stacktrace=false -Dinfo.app.grailsVersion=4.1.2 -Dinfo.app.name=oldGrails -Dinfo.app.version=0.1 -Dmanagement.endpoints.shutdown.enabled=true -Drun.active=true -Dspring.output.ansi.enabled=always -Dspring.profiles.active -Dverbose=false -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -XX:CICompilerCount=3 -Xverify:none -XX:TieredStopAtLevel=1 -Xverify:none -XX:TieredStopAtLevel=1 -Xms768m -Xmx1024m -Dfile.encoding=UTF-8 -Duser.country=RU -Duser.language=ru -Duser.variant oldgrails.Application
+
+Host: Intel(R) Core(TM) i3-2330M CPU @ 2.20GHz, 4 cores, 3G,  Windows 7 , 64 bit Build 7601 (6.1.7601.24545)
+Time: Mon Mar 27 11:24:11 2023 RTZ 4 (çèìà) elapsed time: 0.726561 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000004b7000):  JavaThread "Unknown thread" [_thread_in_vm, id=2372, stack(0x00000000023b0000,0x00000000024b0000)]
+
+Stack: [0x00000000023b0000,0x00000000024b0000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x622d9a]
+V  [jvm.dll+0x7b0289]
+V  [jvm.dll+0x7b1978]
+V  [jvm.dll+0x7b2053]
+V  [jvm.dll+0x24fe08]
+V  [jvm.dll+0x6200aa]
+V  [jvm.dll+0x614665]
+V  [jvm.dll+0x30a3ec]
+V  [jvm.dll+0x30a272]
+V  [jvm.dll+0x30ef86]
+V  [jvm.dll+0x35552f]
+V  [jvm.dll+0x354f60]
+V  [jvm.dll+0x2e7408]
+V  [jvm.dll+0x2e8566]
+V  [jvm.dll+0x78a0d7]
+V  [jvm.dll+0x78b85f]
+V  [jvm.dll+0x362279]
+V  [jvm.dll+0x76d040]
+V  [jvm.dll+0x3d0bbf]
+V  [jvm.dll+0x3d2f51]
+C  [jli.dll+0x5207]
+C  [ucrtbase.DLL+0x203ba]
+C  [kernel32.dll+0x1556d]
+C  [ntdll.dll+0x5372d]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000000000047ccd0, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00000000004d1000 GCTaskThread "GC Thread#0" [stack: 0x000000001a370000,0x000000001a470000] [id=1216]
+  0x00000000004ef800 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000001cca0000,0x000000001cda0000] [id=10956]
+  0x00000000004f1000 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000001ced0000,0x000000001cfd0000] [id=9020]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x000007fec5506bd7]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000000004b50a0] Heap_lock - owner thread: 0x00000000004b7000
+
+Heap address: 0x00000000c0000000, size: 1024 MB, Compressed Oops mode: Non-zero based: 0x00000000c0000000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (1 events):
+Event: 0.654 Loaded shared library C:\Users\Petr\.jdks\corretto-11.0.18\bin\zip.dll
+
+
+Dynamic libraries:
+0x000000013fbd0000 - 0x000000013fbdd000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\java.exe
+0x0000000077070000 - 0x000000007720f000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000076f50000 - 0x000000007706f000 	C:\Windows\system32\kernel32.dll
+0x000007fefcde0000 - 0x000007fefce47000 	C:\Windows\system32\KERNELBASE.dll
+0x000007feedbd0000 - 0x000007feedbe7000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\jli.dll
+0x000007fefae70000 - 0x000007fefb065000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.24483_none_e372d88f30fbb845\COMCTL32.dll
+0x000007fefd7b0000 - 0x000007fefd84f000 	C:\Windows\system32\msvcrt.dll
+0x000007feff210000 - 0x000007feff277000 	C:\Windows\system32\GDI32.dll
+0x0000000076e50000 - 0x0000000076f4b000 	C:\Windows\system32\USER32.dll
+0x000007feff280000 - 0x000007feff28e000 	C:\Windows\system32\LPK.dll
+0x000007fefdcb0000 - 0x000007fefdd7b000 	C:\Windows\system32\USP10.dll
+0x000007fefde20000 - 0x000007fefde91000 	C:\Windows\system32\SHLWAPI.dll
+0x000007feeee10000 - 0x000007feeee29000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\VCRUNTIME140.dll
+0x000007fef1ef0000 - 0x000007fef1ef4000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\api-ms-win-crt-runtime-l1-1-0.dll
+0x000007fed6750000 - 0x000007fed684c000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\ucrtbase.DLL
+0x000007fef27d0000 - 0x000007fef27d3000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\api-ms-win-core-localization-l1-2-0.dll
+0x000007feef750000 - 0x000007feef753000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\api-ms-win-core-processthreads-l1-1-1.dll
+0x000007feefae0000 - 0x000007feefae3000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\api-ms-win-core-file-l1-2-0.dll
+0x000007feed6a0000 - 0x000007feed6a3000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\api-ms-win-core-timezone-l1-1-0.dll
+0x000007feeee00000 - 0x000007feeee03000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\api-ms-win-core-file-l2-1-0.dll
+0x000007feeac60000 - 0x000007feeac63000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\api-ms-win-core-synch-l1-2-0.dll
+0x000007feed690000 - 0x000007feed693000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\api-ms-win-crt-heap-l1-1-0.dll
+0x000007fedc2b0000 - 0x000007fedc2b4000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\api-ms-win-crt-string-l1-1-0.dll
+0x000007feeac50000 - 0x000007feeac54000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\api-ms-win-crt-stdio-l1-1-0.dll
+0x000007fedc190000 - 0x000007fedc194000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\api-ms-win-crt-convert-l1-1-0.dll
+0x000007fedc2a0000 - 0x000007fedc2a3000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\api-ms-win-crt-environment-l1-1-0.dll
+0x000007fedc170000 - 0x000007fedc173000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\api-ms-win-crt-filesystem-l1-1-0.dll
+0x000007fedc180000 - 0x000007fedc185000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\api-ms-win-crt-math-l1-1-0.dll
+0x000007fedad70000 - 0x000007fedad73000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\api-ms-win-crt-locale-l1-1-0.dll
+0x000007fefd4c0000 - 0x000007fefd4ee000 	C:\Windows\system32\IMM32.DLL
+0x000007fefe370000 - 0x000007fefe47b000 	C:\Windows\system32\MSCTF.dll
+0x000007fed6fa0000 - 0x000007fed703b000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\msvcp140.dll
+0x000007fedad80000 - 0x000007fedad83000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\api-ms-win-crt-time-l1-1-0.dll
+0x000007fedad50000 - 0x000007fedad53000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\api-ms-win-crt-utility-l1-1-0.dll
+0x000007fec5210000 - 0x000007fec5d9a000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\server\jvm.dll
+0x000007fefdbd0000 - 0x000007fefdcab000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefd4a0000 - 0x000007fefd4bf000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefd4f0000 - 0x000007fefd61c000 	C:\Windows\system32\RPCRT4.dll
+0x000007fef96e0000 - 0x000007fef96e9000 	C:\Windows\system32\WSOCK32.dll
+0x000007fefd700000 - 0x000007fefd74d000 	C:\Windows\system32\WS2_32.dll
+0x000007fefdbc0000 - 0x000007fefdbc8000 	C:\Windows\system32\NSI.dll
+0x000007fef4610000 - 0x000007fef464b000 	C:\Windows\system32\WINMM.dll
+0x000007fefb920000 - 0x000007fefb92c000 	C:\Windows\system32\VERSION.dll
+0x0000000077210000 - 0x0000000077217000 	C:\Windows\system32\PSAPI.DLL
+0x000007fedad60000 - 0x000007fedad70000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\verify.dll
+0x000007fef3500000 - 0x000007fef3625000 	C:\Windows\system32\DBGHELP.DLL
+0x000007feda4d0000 - 0x000007feda4f8000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\java.dll
+0x000007fedad30000 - 0x000007fedad3a000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\jimage.dll
+0x000007feda660000 - 0x000007feda678000 	C:\Users\Petr\.jdks\corretto-11.0.18\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\Petr\.jdks\corretto-11.0.18\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.24483_none_e372d88f30fbb845;C:\Users\Petr\.jdks\corretto-11.0.18\bin\server
+
+VM Arguments:
+jvm_args: -Denv=development -Dfull.stacktrace=false -Dgrails.env=development -Dgrails.full.stacktrace=false -Dinfo.app.grailsVersion=4.1.2 -Dinfo.app.name=oldGrails -Dinfo.app.version=0.1 -Dmanagement.endpoints.shutdown.enabled=true -Drun.active=true -Dspring.output.ansi.enabled=always -Dspring.profiles.active -Dverbose=false -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -XX:CICompilerCount=3 -Xverify:none -XX:TieredStopAtLevel=1 -Xverify:none -XX:TieredStopAtLevel=1 -Xms768m -Xmx1024m -Dfile.encoding=UTF-8 -Duser.country=RU -Duser.language=ru -Duser.variant 
+java_command: oldgrails.Application
+java_class_path (initial): D:\Ëåíà\Groovy\oldGrails\src\main\resources;D:\Ëåíà\Groovy\oldGrails\grails-app\views;D:\Ëåíà\Groovy\oldGrails\grails-app\i18n;D:\Ëåíà\Groovy\oldGrails\grails-app\conf;D:\Ëåíà\Groovy\oldGrails\build\classes\java\main;D:\Ëåíà\Groovy\oldGrails\build\classes\groovy\main;D:\Ëåíà\Groovy\oldGrails\gsp-classes;C:\Users\Petr\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-actuator\2.2.13.RELEASE\51c2639f6c3033a9591f47dd30d66f2e9830ed6c\spring-boot-starter-actuator-2.2.13.RELEASE.jar;C:\Users\Petr\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter\2.2.13.RELEASE\397f7f7280848ca47fe97813be290602725da751\spring-boot-starter-2.2.13.RELEASE.jar;C:\Users\Petr\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-logging\2.2.13.RELEASE\86e5a0c963a765b622fc8d3424bbc7d603902b09\spring-boot-starter-logging-2.2.13.RELEASE.jar;C:\Users\Petr\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-devtools\2.2.13.RELEASE\225b7ca038cb88afd6b03b9239dad9afa07b5581\spring-boot-devtools-2.2.13.RELEASE.jar;C:\Users\Petr\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-actuator-autoconfigure\2.2.13.RELEASE\ec20081eca88f5c9fcd5f834ed88770dc907112f\spring-boot-actuator-autoconfigure-2.2.13.RELEASE.jar;C:\Users\Petr\.gradle\caches\modules-2\files-2.1\org.grails\grails-plugin-rest\4.1.2\d89634b36f2633e8a44ae895c7b883063719b0fe\grails-plugin-rest-4.1.2.jar;C:\Users\Petr\.gradle\caches\modules-2\files-2.1\org.grails\grails-plugin-interceptors\4.1.2\4721eb2015460ded942d186f39b8817642051f30\grails-plugin-interceptors-4.1.2.jar;C:\Users\Petr\.gradle\caches\modules-2\files-2.1\org.grails\grails-plugin-url-mappings\4.1.2\75916845de3532cbe42bcfeb41ae4d803f7194bf\grails-plugin-url-mappings-4.1.2.jar;C:\Users\Petr\.gradle\caches\modules-2\files-2.1\org.grails.plugins\async\4.0.0\41a4a5a76032ae71d77ce7a9722986ae5a42af04\async-4.0.0.jar;C:\Users\Petr\.gradle
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     bool BytecodeVerificationLocal                = false                                     {product} {command line}
+     bool BytecodeVerificationRemote               = false                                     {product} {command line}
+     intx CICompilerCount                          = 3                                         {product} {command line}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 805306368                                 {product} {command line}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1073741824                                {product} {command line}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 6973028                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 244685212                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 0                                      {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool TieredCompilation                        = true                                   {pd product} {command line}
+     intx TieredStopAtLevel                        = 1                                         {product} {command line}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+PATH=C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Git\cmd;C:\Program Files\PuTTY\;C:\Program Files\nodejs\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\GitExtensions\;C:\Program Files\TortoiseGit\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\Petr\AppData\Roaming\npm;C:\Users\Petr\.dotnet\tools;C:\Users\Petr\bin
+USERNAME=Petr
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel
+TMP=C:\Users\Petr\AppData\Local\Temp
+TEMP=C:\Users\Petr\AppData\Local\Temp
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 (6.1.7601.24545)
+OS uptime: 3 days 22:25 hours
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 42 stepping 7 microcode 0x0, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, clmul, ht, tsc, tscinvbit
+
+Memory: 4k page, system-wide physical 4008M (60M free)
+TotalPageFile size 13384M (AvailPageFile size 241M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 54M, peak: 820M
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.18+10-LTS) for windows-amd64 JRE (11.0.18+10-LTS), built on Jan 10 2023 20:17:52 by "Administrator" with MS VC++ 15.9 (VS2017)
+
+END.
